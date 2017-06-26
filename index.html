@@ -3,20 +3,39 @@
   <head>
     <meta charset="utf-8">
     <title>Music App</title>
-    <link rel="stylesheet" type="text/css" href="./main.css" />
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
   </head>
   <body>
     <h1>Sick Beats</h1>
+    <br />
+      <audio
+  src="https://api.soundcloud.com/tracks?client_id=095fe1dcd09eb3d0e1d3d89c76f5618f"
+  autoplay>
+  Your browser does not support the <code>audio</code> element.
+      </audio>
     <hr />
-    <form>
-      <input type="text" name="search" placeholder="Search for Artist" />
+    <form action="https://api.soundcloud.com/tracks?client_id=095fe1dcd09eb3d0e1d3d89c76f5618f" method="GET" onSubmit=search() id="searchArtist">
+      <input type="text" class="artistSearch" name="search" placeholder="Search for Artist" />
       <button type="submit" name="submit">Search</button>
+      </form>
       <hr />
       <h2>Search results:</h2>
+      <br />
+      <div class="trackList">
+        <img src="document.querySelector.(div.sound_artwork)" />
+        <p>Song Title</p>
+        <p>Band Name</p>
 
-    </form>
+      </div>
 
-    <script src="./index.js"></script>
+
+
+    <script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
+    <script>
+      SC.initialize({
+        client_id: '095fe1dcd09eb3d0e1d3d89c76f5618f',
+      });
+    </script>
 
   </body>
 </html>
